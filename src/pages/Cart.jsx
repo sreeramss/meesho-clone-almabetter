@@ -9,6 +9,7 @@ const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
   const navigate = useNavigate();
 
+// fetching data to show the cart details which are added
   useEffect(() => {
     const fetchCartItems = async () => {
       if (auth.currentUser) {
@@ -26,6 +27,7 @@ const Cart = () => {
     fetchCartItems();
   }, []);
 
+  // remove function to delete the item in the cart which is stored in the firebase 
   const handleRemove = async (productId) => {
     if (auth.currentUser) {
       const userId = auth.currentUser.uid;
@@ -50,6 +52,7 @@ const Cart = () => {
     }
   };
 
+  
   const handleNavigate = () => {
     navigate("/");
   };
