@@ -11,11 +11,11 @@ const SignUp = () => {
   const [name, setName] = useState("");
 
   const navigate = useNavigate();
-
+//handle navigation to login page 
   const handleLoginNavigation = () => {
     navigate("/login");
   };
-
+//submits the form when clicking signup
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
