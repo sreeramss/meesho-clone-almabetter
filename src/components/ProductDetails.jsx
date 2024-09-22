@@ -81,7 +81,7 @@ const buyNow = async () => {
 
     try {
       await setDoc(cartRef, {
-        ...product, // Spread the product data
+        ...product,
         selectedSize: isClothingCategory ? size : null, // Only include size if applicable
       });
       toast.success("Added To Bag", {
