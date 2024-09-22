@@ -11,7 +11,7 @@ import Jewellery from "./pages/Jewellery";
 import Electronics from "./pages/Electronics";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
-import ProductDetails from "./components/Productdetails";
+import ProductDetails from "./components/ProductDetails";
 import Cart from "./pages/Cart";
 import { useEffect, useState } from "react";
 import { auth } from "./components/firebase";
