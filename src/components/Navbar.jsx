@@ -20,7 +20,8 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   const categories = ["Men", "Women", "Jewellery", "Electronics"];
-
+ 
+// Tetching the userdata to show in the profile   
   const fetchUserData = async () => {
     auth.onAuthStateChanged(async (user) => {
       if (user) {
@@ -37,6 +38,7 @@ const Navbar = () => {
     });
   };
 
+  // logout functionality to handle logout button
   async function handleLogout() {
     try {
       await auth.signOut();
@@ -67,6 +69,7 @@ const Navbar = () => {
     setProfileDropdown(!profileDropdown);
   };
 
+  //filtering the search field to show suggestions
   const handleSearch = (e) => {
     setSearchValue(e.target.value);
     if (e.target.value.trim() !== "") {
@@ -79,7 +82,8 @@ const Navbar = () => {
     }
   };
 
-  const handleSuggestionClick = (category) => {
+  // navigation to the category when clicking suggestions
+   const handleSuggestionClick = (category) => {
     if (category === "Men") {
       navigate("/mens");
     } else if (category === "Women") {
@@ -89,8 +93,8 @@ const Navbar = () => {
     } else if (category === "Electronics") {
       navigate("/electronics");
     }
-    setSearchValue(""); // Clear search value after navigation
-    setSuggestions([]); // Clear suggestions after navigation
+    setSearchValue(""); 
+    setSuggestions([]); 
   };
 
   useEffect(() => {
